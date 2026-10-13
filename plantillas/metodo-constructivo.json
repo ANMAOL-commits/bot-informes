@@ -1,0 +1,175 @@
+{
+  "tipo_label": "INFORME TÉCNICO",
+  "subtitulo": "MÉTODO CONSTRUCTIVO",
+  "codigo": "[código]",
+  "revision": "00",
+  "titulo": "Método constructivo – [actividad / elemento]",
+  "secciones": [
+    {
+      "titulo": "Objeto",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "El presente informe describe el método constructivo previsto para **[[actividad o elemento]]**, detallando la secuencia de ejecución, los recursos necesarios y los controles asociados."
+        }
+      ]
+    },
+    {
+      "titulo": "Alcance",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "[[Qué comprende y qué no comprende este método. Sectores o progresivas involucradas.]]"
+        }
+      ]
+    },
+    {
+      "titulo": "Documentación de referencia",
+      "bloques": [
+        {
+          "type": "bullets",
+          "items": [
+            "[[Planos y especificaciones técnicas aplicables]]",
+            "[[Normas y reglamentos aplicables (ej.: CIRSOC)]]"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Recursos necesarios",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "Tipo",
+            "Detalle",
+            "Cantidad"
+          ],
+          "rows": [
+            [
+              "Personal",
+              "[[completar]]",
+              ""
+            ],
+            [
+              "Equipos",
+              "[[completar]]",
+              ""
+            ],
+            [
+              "Materiales",
+              "[[completar]]",
+              ""
+            ],
+            [
+              "Herramientas",
+              "[[completar]]",
+              ""
+            ]
+          ],
+          "widths": [
+            2000,
+            4504,
+            2000
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Secuencia constructiva",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "La ejecución se desarrollará en las siguientes etapas:"
+        },
+        {
+          "type": "numbered",
+          "items": [
+            "**Etapa 1 – [[nombre]]:** [[descripción]]",
+            "**Etapa 2 – [[nombre]]:** [[descripción]]",
+            "**Etapa 3 – [[nombre]]:** [[descripción]]"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Controles de calidad",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "Etapa",
+            "Control",
+            "Criterio de aceptación",
+            "Registro"
+          ],
+          "rows": [
+            [
+              "1",
+              "[[completar]]",
+              "",
+              ""
+            ],
+            [
+              "2",
+              "[[completar]]",
+              "",
+              ""
+            ]
+          ],
+          "widths": [
+            900,
+            2800,
+            2804,
+            2000
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Riesgos y medidas preventivas",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "Riesgo",
+            "Medida preventiva",
+            "EPP / elementos"
+          ],
+          "rows": [
+            [
+              "[[completar]]",
+              "",
+              ""
+            ],
+            [
+              "[[completar]]",
+              "",
+              ""
+            ]
+          ],
+          "widths": [
+            2800,
+            3704,
+            2000
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Conclusiones",
+      "bloques": [
+        {
+          "type": "numbered",
+          "items": [
+            "[[Conclusión sobre la factibilidad y condiciones del método.]]"
+          ]
+        }
+      ]
+    }
+  ],
+  "anexo": {
+    "titulo": "Imágenes y esquemas del método",
+    "fotos": []
+  }
+}

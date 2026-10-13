@@ -1,0 +1,165 @@
+{
+  "tipo_label": "INFORME TÉCNICO",
+  "subtitulo": "ELEMENTOS NECESARIOS",
+  "codigo": "[código]",
+  "revision": "00",
+  "titulo": "Elementos necesarios para la ejecución de [actividad / obra]",
+  "secciones": [
+    {
+      "titulo": "Objeto",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "El presente informe detalla los materiales, equipos, herramientas y personal necesarios para ejecutar **[[actividad]]**."
+        }
+      ]
+    },
+    {
+      "titulo": "Alcance y base de cálculo",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "[[Cantidades base (metrajes, volúmenes, superficies) y criterios usados para dimensionar los recursos.]]"
+        }
+      ]
+    },
+    {
+      "titulo": "Materiales",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "N.º",
+            "Descripción",
+            "Unidad",
+            "Cantidad",
+            "Observaciones"
+          ],
+          "rows": [
+            [
+              "1",
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ],
+            [
+              "2",
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ],
+            [
+              "3",
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ]
+          ],
+          "widths": [
+            700,
+            3404,
+            1000,
+            1200,
+            2200
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Equipos y herramientas",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "N.º",
+            "Descripción",
+            "Cantidad",
+            "Período de uso",
+            "Observaciones"
+          ],
+          "rows": [
+            [
+              "1",
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ],
+            [
+              "2",
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ]
+          ],
+          "widths": [
+            700,
+            3404,
+            1100,
+            1500,
+            1800
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Personal",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "Función",
+            "Cantidad",
+            "Dedicación"
+          ],
+          "rows": [
+            [
+              "[[completar]]",
+              "",
+              ""
+            ],
+            [
+              "[[completar]]",
+              "",
+              ""
+            ]
+          ],
+          "widths": [
+            4004,
+            2000,
+            2500
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Consumibles y elementos de protección",
+      "bloques": [
+        {
+          "type": "bullets",
+          "items": [
+            "[[EPP por actividad]]",
+            "[[Consumibles y varios]]"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Observaciones",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "[[Supuestos adoptados, desperdicios considerados, aspectos a confirmar con proveedores.]]"
+        }
+      ]
+    }
+  ],
+  "anexo": {
+    "titulo": "Imágenes de referencia",
+    "fotos": []
+  }
+}
