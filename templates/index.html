@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enfoque Ingeniería – Bot de informes</title>
+<link rel="stylesheet" href="/static/informe.css">
+<style>
+  :root{--verde:#00d58f;--verde-osc:#047857;--negro:#0b0b0b;--borde:#d1d5db}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--verde);color:#111;min-height:100vh}
+  header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 28px}
+  header.top h1{margin:0;font-size:22px;color:var(--negro)}
+  header.top img.logo{height:58px;width:auto;display:block;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  main{max-width:960px;margin:8px auto 30px;padding:0 16px}
+  .card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:20px;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+  .card h2{margin:0 0 14px;font-size:16px;color:var(--verde-osc)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  label{display:block;font-size:13px;font-weight:bold;margin-bottom:4px}
+  input[type=text],select,textarea{width:100%;padding:9px;border:1px solid var(--borde);border-radius:6px;font:inherit}
+  input[type=text]:focus,select:focus,textarea:focus{outline:2px solid var(--verde);border-color:var(--verde-osc)}
+  textarea{min-height:150px;resize:vertical}
+  .archivos{margin-top:14px}
+  .archivos input{width:100%}
+  .nota{font-size:12px;color:#555;margin:4px 0 0}
+  button{background:var(--negro);color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:15px;cursor:pointer}
+  button:hover{background:#222}
+  button:disabled{opacity:.55;cursor:wait}
+  button.sec{background:#fff;color:var(--negro);border:1px solid var(--negro)}
+  button.sec:hover{background:#f0fdf8}
+  .fila{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px}
+  #estado{margin-top:12px;font-size:14px}
+  .error{background:#fee2e2;border:1px solid #fca5a5;color:#7f1d1d;padding:10px 12px;border-radius:6px}
+  .ok{color:var(--verde-osc);font-weight:bold}
+  .aviso{background:#fef9c3;border:1px solid #fde047;padding:8px 12px;border-radius:6px;font-size:13px;margin-top:8px}
+  #resultado{display:none}
+  #vista{border:1px solid var(--borde);border-radius:6px;background:#fff;max-height:640px;overflow:auto}
+  .spinner{display:inline-block;width:14px;height:14px;border:2px solid #cbd5e1;border-top-color:var(--verde-osc);border-radius:50%;animation:g 1s linear infinite;vertical-align:-2px;margin-right:6px}
+  @keyframes g{to{transform:rotate(360deg)}}
+  @media (max-width:560px){header.top h1{font-size:17px}header.top img.logo{height:44px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Enfoque Ingeniería · Bot de informes</h1>
+  <img class="logo" src="/static/logo.png" alt="Enfoque Ingeniería + Construcción">
+</header>
+<main>
+  <form id="form" class="card">
+    <h2>1. Datos del informe</h2>
+    <div class="grid">
+      <div><label for="tipo">Tipo de informe</label>
+        <select id="tipo" name="tipo">{% for k, v in tipos.items() %}<option value="{{ k }}">{{ v }}</option>{% endfor %}</select></div>
+      <div><label for="obra">Obra / proyecto</label><input type="text" id="obra" name="obra" placeholder="Ej.: Reservorio Guandacol"></div>
+      <div><label for="codigo">Código del documento</label><input type="text" id="codigo" name="codigo" placeholder="EI-INF-001"></div>
+      <div><label for="revision">Revisión</label><input type="text" id="revision" name="revision" value="00"></div>
+      <div><label for="fecha">Fecha</label><input type="text" id="fecha" name="fecha" value="{{ hoy }}"></div>
+      <label for="fecha_desde">Fecha desde</label>
+<input type="date" id="fecha_desde" name="fecha_desde">
+
+<label for="fecha_hasta">Fecha hasta</label>
+<input type="date" id="fecha_hasta" name="fecha_hasta">
+
+    </div>
+
+    <div class="archivos">
+      <label for="datos">Datos e indicaciones (texto)</label>
+      <textarea id="datos" name="datos" placeholder="Escribí o pegá acá: período, tareas ejecutadas, porcentajes de avance, recursos, novedades, o lo que quieras que el informe incluya..."></textarea>
+    </div>
+
+    <div class="grid archivos">
+      <div><label for="imagenes">Imágenes (fotos de obra)</label>
+        <input type="file" id="imagenes" name="imagenes" accept="image/*" multiple>
+        <p class="nota">JPG, PNG o WEBP. Hasta 20 fotos.</p></div>
+      <div><label for="audios">Audios (notas de voz)</label>
+        <input type="file" id="audios" name="audios" accept="audio/*,.opus,.m4a" multiple>
+        <p class="nota">MP3, WAV, OGG/OPUS (WhatsApp), M4A, AAC o FLAC. Total hasta ~15 MB.</p></div>
+    </div>
+
+    <div class="fila">
+      <button type="submit" id="btn">Generar informe</button>
+      <label style="font-weight:normal;margin:0"><input type="checkbox" name="modo_prueba"> Modo prueba (sin IA, solo arma la plantilla)</label>
+    </div>
+    <div id="estado"></div>
+  </form>
+
+  <section id="resultado" class="card">
+    <h2>2. Informe generado</h2>
+    <div class="fila" style="margin:0 0 12px">
+      <a id="lnkDocx" href="#"><button type="button">⬇ Descargar Word (.docx)</button></a>
+      <a id="lnkHtml" href="#" target="_blank"><button type="button" class="sec">Abrir versión HTML</button></a>
+      <button type="button" class="sec" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+    <p class="nota">Lo resaltado en <mark style="background:#fff200">amarillo</mark> lo redactó la IA y requiere tu revisión antes de firmar.</p>
+    <div id="vista"></div>
+
+    <h2 style="margin-top:20px">3. Pedir cambios</h2>
+    <textarea id="instruccion" style="min-height:70px" placeholder="Ej.: Ampliá la sección de riesgos, sacá la foto 3 y agregá una conclusión sobre el desvío de plazo."></textarea>
+    <div class="fila"><button type="button" id="btnAjustar" class="sec">Aplicar cambios</button></div>
+  </section>
+</main>
+
+<script>
+let idActual = null;
+const $ = (s) => document.querySelector(s);
+
+function estado(html, clase) { $('#estado').innerHTML = html ? `<div class="${clase || ''}">${html}</div>` : ''; }
+
+function mostrar(j) {
+  idActual = j.id;
+  $('#vista').innerHTML = j.html;
+  $('#lnkDocx').href = j.docx;
+  $('#lnkHtml').href = j.htmlfile;
+  $('#resultado').style.display = 'block';
+  (j.avisos || []).forEach(a => { $('#estado').insertAdjacentHTML('beforeend', `<div class="aviso">${a}</div>`); });
+}
+
+async function enviar(url, opciones, boton, msg) {
+  boton.disabled = true;
+  estado(`<span class="spinner"></span>${msg}`);
+  try {
+    const r = await fetch(url, opciones);
+    const j = await r.json();
+    if (!j.ok) { estado(j.error, 'error'); return; }
+    estado('Listo ✔', 'ok');
+    mostrar(j);
+    $('#resultado').scrollIntoView({behavior: 'smooth'});
+  } catch (e) {
+    estado('No se pudo conectar con el programa. ¿Sigue abierto app.py? Detalle: ' + e, 'error');
+  } finally {
+    boton.disabled = false;
+  }
+}
+
+$('#form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  enviar('/generar', {method: 'POST', body: new FormData($('#form'))}, $('#btn'),
+         'Generando el informe… puede tardar entre 20 y 90 segundos.');
+});
+
+$('#btnAjustar').addEventListener('click', () => {
+  const instruccion = $('#instruccion').value.trim();
+  if (!idActual || !instruccion) { estado('Escribí qué querés cambiar.', 'error'); return; }
+  enviar('/ajustar', {method: 'POST', headers: {'Content-Type': 'application/json'},
+         body: JSON.stringify({id: idActual, instruccion})}, $('#btnAjustar'), 'Aplicando cambios…');
+});
+</script>
+</body>
+</html>
