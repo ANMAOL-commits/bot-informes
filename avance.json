@@ -1,0 +1,208 @@
+{
+  "tipo_label": "INFORME TÉCNICO",
+  "subtitulo": "AVANCE DE OBRA",
+  "codigo": "[código]",
+  "revision": "00",
+  "titulo": "Informe de avance de obra – [nombre de la obra] – Período [desde] al [hasta]",
+  "secciones": [
+    {
+      "titulo": "Objeto",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "El presente informe tiene por objeto dar cuenta del estado de avance de la obra **[[nombre de la obra]]** durante el período comprendido entre el [[fecha desde]] y el [[fecha hasta]]."
+        }
+      ]
+    },
+    {
+      "titulo": "Datos generales de la obra",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "Dato",
+            "Detalle"
+          ],
+          "rows": [
+            [
+              "Obra",
+              "[[completar]]"
+            ],
+            [
+              "Comitente",
+              "[[completar]]"
+            ],
+            [
+              "Ubicación",
+              "[[completar]]"
+            ],
+            [
+              "Contratista",
+              "[[completar]]"
+            ],
+            [
+              "Plazo contractual",
+              "[[completar]]"
+            ],
+            [
+              "Fecha de inicio",
+              "[[completar]]"
+            ]
+          ],
+          "widths": [
+            3000,
+            5504
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Avance físico",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "A continuación se resume el avance físico por ítem respecto de lo planificado."
+        },
+        {
+          "type": "table",
+          "header": [
+            "Ítem",
+            "Descripción",
+            "Previsto (%)",
+            "Real (%)",
+            "Desvío (%)"
+          ],
+          "rows": [
+            [
+              "1",
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ],
+            [
+              "2",
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ],
+            [
+              "3",
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ]
+          ],
+          "widths": [
+            900,
+            3804,
+            1300,
+            1300,
+            1200
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Tareas ejecutadas en el período",
+      "bloques": [
+        {
+          "type": "bullets",
+          "items": [
+            "[[Tarea 1: descripción, ubicación y cantidad ejecutada]]",
+            "[[Tarea 2]]",
+            "[[Tarea 3]]"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Recursos empleados",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "Recurso",
+            "Cantidad",
+            "Días / horas",
+            "Observaciones"
+          ],
+          "rows": [
+            [
+              "Personal",
+              "[[completar]]",
+              "",
+              ""
+            ],
+            [
+              "Equipos",
+              "[[completar]]",
+              "",
+              ""
+            ],
+            [
+              "Materiales principales",
+              "[[completar]]",
+              "",
+              ""
+            ]
+          ],
+          "widths": [
+            2600,
+            1500,
+            1700,
+            2704
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Novedades y desvíos",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "[[Describir inconvenientes, demoras, interferencias, adicionales y las acciones correctivas adoptadas.]]"
+        }
+      ]
+    },
+    {
+      "titulo": "Seguridad e higiene",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "[[Resumen de charlas, inspecciones, incidentes y observaciones del período.]]"
+        }
+      ]
+    },
+    {
+      "titulo": "Próximas tareas",
+      "bloques": [
+        {
+          "type": "bullets",
+          "items": [
+            "[[Tarea prevista 1]]",
+            "[[Tarea prevista 2]]"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Conclusiones",
+      "bloques": [
+        {
+          "type": "numbered",
+          "items": [
+            "[[Conclusión sobre el estado general del avance.]]",
+            "[[Conclusión sobre desvíos y medidas a tomar.]]"
+          ]
+        }
+      ]
+    }
+  ],
+  "anexo": {
+    "titulo": "Registro fotográfico del avance",
+    "fotos": []
+  }
+}

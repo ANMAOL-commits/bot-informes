@@ -1,0 +1,156 @@
+{
+  "tipo_label": "PROCEDIMIENTO",
+  "subtitulo": "[ACTIVIDAD]",
+  "codigo": "[código]",
+  "revision": "00",
+  "titulo": "Procedimiento de trabajo – [actividad]",
+  "secciones": [
+    {
+      "titulo": "Objeto",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "Establecer la metodología segura y ordenada para **[[actividad]]**."
+        }
+      ]
+    },
+    {
+      "titulo": "Alcance",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "[[A quiénes y a qué tareas, sectores o equipos aplica.]]"
+        }
+      ]
+    },
+    {
+      "titulo": "Responsables",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "Función",
+            "Responsabilidad"
+          ],
+          "rows": [
+            [
+              "Jefe de obra",
+              "[[completar]]"
+            ],
+            [
+              "Supervisor / capataz",
+              "[[completar]]"
+            ],
+            [
+              "Responsable de Seguridad e Higiene",
+              "[[completar]]"
+            ],
+            [
+              "Operarios",
+              "[[completar]]"
+            ]
+          ],
+          "widths": [
+            3000,
+            5504
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Documentos de referencia",
+      "bloques": [
+        {
+          "type": "bullets",
+          "items": [
+            "[[Normas, legislación y especificaciones aplicables]]"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Definiciones",
+      "bloques": [
+        {
+          "type": "bullets",
+          "items": [
+            "**[[Término]]:** [[definición]]"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Elementos de protección personal y seguridad",
+      "bloques": [
+        {
+          "type": "bullets",
+          "items": [
+            "[[EPP obligatorio]]",
+            "[[Señalización y delimitación]]",
+            "[[Permisos de trabajo requeridos]]"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Desarrollo del trabajo",
+      "bloques": [
+        {
+          "type": "numbered",
+          "items": [
+            "**[[Paso 1]]:** [[descripción]]",
+            "**[[Paso 2]]:** [[descripción]]",
+            "**[[Paso 3]]:** [[descripción]]"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Controles y registros",
+      "bloques": [
+        {
+          "type": "table",
+          "header": [
+            "Control",
+            "Frecuencia",
+            "Responsable",
+            "Registro"
+          ],
+          "rows": [
+            [
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ],
+            [
+              "[[completar]]",
+              "",
+              "",
+              ""
+            ]
+          ],
+          "widths": [
+            2800,
+            1500,
+            2000,
+            2204
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Contingencias",
+      "bloques": [
+        {
+          "type": "p",
+          "text": "[[Acciones ante incidentes, condiciones climáticas adversas o desvíos del procedimiento.]]"
+        }
+      ]
+    }
+  ],
+  "anexo": {
+    "titulo": "Registro fotográfico y esquemas",
+    "fotos": []
+  }
+}
