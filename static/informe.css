@@ -1,0 +1,22 @@
+.informe{font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#111;max-width:820px;margin:0 auto;background:#fff;padding:28px 36px}
+.informe table{border-collapse:collapse}
+.informe .cabecera{width:100%;font-size:12px;margin-bottom:18px}
+.informe .cabecera td{border:1px solid #000;padding:4px 8px}
+.informe .cabecera .logo{text-align:center;width:22%}
+.informe .cabecera .tit{text-align:center;font-weight:bold;font-size:14px}
+.informe h1.titulo{font-size:16px;margin:10px 0 18px}
+.informe h2{font-size:15px;margin:26px 0 8px;padding-top:12px;border-top:1px solid #bfbfbf}
+.informe h2.anexo{text-align:center;font-weight:normal;border:0;margin-top:34px}
+.informe p{margin:0 0 10px}
+.informe ul,.informe ol{margin:0 0 10px;padding-left:28px}
+.informe .scroll{overflow-x:auto;margin-bottom:12px}
+.informe .datos{width:100%;font-size:13px}
+.informe .datos th,.informe .datos td{border:1px solid #000;padding:4px 8px;text-align:left;vertical-align:top}
+.informe .datos th{background:#e7e6e6}
+.informe figure{margin:14px 0;text-align:center}
+.informe figure img{max-width:100%;max-height:460px;height:auto}
+.informe figcaption{font-size:12px;font-style:italic;margin-top:4px}
+.informe mark{background:#fff200}
+.informe .firmas{width:100%;margin-top:30px;font-size:12px;font-weight:bold}
+.informe .firmas td{border:1px solid #000;padding:6px 8px;width:33%}
+@media print{.informe{padding:0;max-width:none}}
