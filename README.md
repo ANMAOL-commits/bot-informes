@@ -1,4 +1,4 @@
-# Bot de informes – Enfoque Ingeniería
+# Bot de informes – Axis Ingeniería
 
 Página HTML local donde cargás **datos, imágenes y audios** y el bot (Gemini, gratis) redacta el informe.
 Descarga en **Word (.docx)** y **HTML**, con el formato del modelo (encabezado, secciones numeradas, anexo fotográfico, firmas).
